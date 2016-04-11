@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!-- Starting Afresh: Week 14: Multiple charts. Working towards the final project  -->
+
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+		<!-- Link to Bootstrap stylesheet -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<!-- Link to custom style.css -->
+		<link href="style.css" rel="stylesheet" type="text/css" />
+
+	</head>
+
+<body>
+    <div id="mytooltip1" class="tooltip_world">
+        <p class="name"></p>
+        <div data-metric="Amount" class="line"></div>
+        <div class="Amount symbol"></div>Number
+        <div class="Amount val"></div>
+    </div>
+    
+    
+	<div class="container">
+<!--		<h1>Road accidents and deaths</h1>-->
+		
+		<!-- World Map row -->
+		<div class="row" id="worldmap">
+				<h2>World road accidents death number in 2013</h2>
+                <p>Source: <a href="http://apps.who.int/gho/data/node.main.A997">World Health Organization</a></p>
+                <p class="intro">According to the World Health Organization, road traffic injuries caused an estimated 1.25 million deaths worldwide in the year 2010. That is, one person is killed every 25 seconds. Only 28 countries, representing 449 million people (7% of the world’s population), have adequate laws that address all five risk factors (speed, drink–driving, helmets, seat-belts and child restraints). Over a third of road traffic deaths in low- and middle-income countries are among pedestrians and cyclists. However, less than 35% of low- and middle-income countries have policies in place to protect these road users.
+
+The average rate was 17.4 per 100,000 people. Low-income countries now have the highest annual road traffic fatality rates, at 24.1 per 100 000, while the rate in high-income countries is lowest, at 9.2 per 100000.</p>
+				<div id="vis_world">
+			</div>
+		</div>
+		
+		<!-- State Map row -->
+		<div class="row" id="usstatehmap">
+				<h2>America road accidents death rate in 2013</h2>
+                <p>Source: <a href="http://www.iihs.org/iihs/topics/t/general-statistics/fatalityfacts/state-by-state-overview/2013">Insurance Institute for Highway Safety Highway Loss Data Institute</a></p>
+                <div class="col-md-7">
+				<div id="vis_state">
+			</div>
+		</div>
+                <div class="col-md-3 col-md-offset-2">
+                <p class="intro1">There were 30,057 fatal motor vehicle crashes in the United States in 2013 in which 32,719 deaths occurred. This resulted in national motor vehicle crash death rates of 10.3 deaths per 100,000 people and 1.11 deaths per 100 million vehicle miles traveled. The fatality rate per 100,000 people ranged from a low of 3.1 in the District of Columbia to a high of 22.6 in Montana. The death rates per 100 million vehicle miles traveled ranged from 0.56 in the District of Columbia to 1.96 in Montana.</p>
+                </div>
+                
+    </div>
+</div>
+        
+
+		 <!-- End of container -->
+<!-- ====================================================  -->
+<!-- Script files -->
+<!-- ====================================================  -->
+	<script src="//d3js.org/d3.v3.min.js"></script>
+	<script src="//d3js.org/queue.v1.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<!-- Map-specific -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/1.9.0/d3-legend.js"></script>
+	<script src="//d3js.org/topojson.v1.min.js"></script>
+	<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+<!-- Main Javascript file -->
+	<script src="js/worldmap.js"></script>
+	<script src="js/statemap.js"></script>
+
+</body>
+
+</html>
