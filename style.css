@@ -19,7 +19,6 @@ h2{
     color:grey;
     }
 p{
-    margin-bottom: 30px;
     text-align: center;
     color: #6d819c;
         }
@@ -37,7 +36,7 @@ p{
     position: absolute;
     text-align: center;
     min-width: 100px;
-    height: 70px;
+    height: 40px;
     padding: 2px;
     font: 12px sans-serif;
     background: white;

@@ -1,44 +1,38 @@
-//Width and height of map
-var width_state = 960;
-var height_state = 500;
+function drawStatemap(json, states) {
+    
+    //Width and height of map
+    var width = 960;
+    var height = 500;
 
-// D3 Projection
-var projection = d3.geo.albersUsa()
-                   .translate([width_state/2, height_state/2])    // translate to center of screen
-                   .scale([1000]);          // scale things down so see entire US
+    // D3 Projection
+    var projection = d3.geo.albersUsa()
+                       .translate([width/2, height/2])    // translate to center of screen
+                       .scale([1000]);          // scale things down so see entire US
 
-// Define path generator
-var path = d3.geo.path()               // path generator that will convert GeoJSON to SVG paths
-             .projection(projection);  // tell path generator to use albersUsa projection
-
-
-// Define linear scale for output
-var stateColor = d3.scale.linear()
-              .range(["#fbdddf", "#f9547b"]);
+    // Define path generator
+    var path = d3.geo.path()               // path generator that will convert GeoJSON to SVG paths
+                 .projection(projection);  // tell path generator to use albersUsa projection
 
 
-//Create SVG element and append map to the SVG
-var svg_state = d3.select("#vis_state")
-            .append("svg")
-            .attr('class', 'vis_state')
-            .attr("width", width_state)
-            .attr("height",height_state);
+    // Define linear scale for output
+    var stateColor = d3.scale.linear()
+                  .range(["#fcf5f5", "#de9393"]);
 
-// Append Div for tooltip to SVG
-var div = d3.select("body")
-            .append("div")
-            .attr("class", "tooltip_state")
-            .style("display", "none");
 
-queue()
-    .defer(d3.json, "json/us-states.json")
-    .defer(d3.csv, "data/USstate_death2013.csv")
-    .await(ready);
+    //Create SVG element and append map to the SVG
+    var svg = d3.select("#vis_state")
+                .append("svg")
+                .attr('class', 'vis_state')
+                .attr("width", width)
+                .attr("height",height);
 
-function ready(error, json, states, deaths) {
+    // Append Div for tooltip to SVG
+    var div = d3.select("body")
+                .append("div")
+                .attr("class", "tooltip_state")
+                .style("display", "none");
 
     stateColor.domain(d3.extent(states,function(s) { return +s.rate;})); 
-    console.log(error, states, deaths);
     
     states.forEach(function(state) {
         
@@ -56,7 +50,7 @@ function ready(error, json, states, deaths) {
 
 
     // Bind the data to the SVG and create one path per GeoJSON feature
-    svg_state.selectAll("path.states")
+    svg.selectAll("path.states")
         .data(json.features)
         .enter()
         .append("path")
@@ -71,6 +65,8 @@ function ready(error, json, states, deaths) {
             div.transition()
                .duration(200)
                .style("display", null);
+                d3.select(this).moveToFront();
+            d3.select(this).style("opacity", 0.5).style("stroke","black");
             div.html("<p>Death rate per 100,000 population: " + d.properties.name + "  " +   d.properties.rate + " %"+ "</p>")
                .style("left", (d3.event.pageX + 10) + "px")
                .style("top", (d3.event.pageY - 28) + "px");
@@ -79,9 +75,11 @@ function ready(error, json, states, deaths) {
             div.transition()
                .duration(500)
                .style("display", "none");
+                d3.select(this).style("opacity", 1)
+                .style("stroke","white");
         });
 
-    svg_state.append("g")
+    svg.append("g")
     .attr("class", "legendColors")
     .attr("transform", "translate(800, 300)"); // where we put it on the page!
 
@@ -92,7 +90,7 @@ function ready(error, json, states, deaths) {
     .labelFormat(d3.format("1f"))
     .scale(stateColor); 
 
-    svg_state.select(".legendColors")
+    svg.select(".legendColors")
     .call(legendColors);
 
 
