@@ -19,34 +19,95 @@
         <div class="Amount val"></div>
     </div>
     
+    <div id="mytooltip2" class="tooltip_line"></div>
     
 	<div class="container">
 <!--		<h1>Road accidents and deaths</h1>-->
 		
-		<!-- World Map row -->
-		<div class="row" id="worldmap">
-				<h2>World road accidents death number in 2013</h2>
-                <p>Source: <a href="http://apps.who.int/gho/data/node.main.A997">World Health Organization</a></p>
-                <p class="intro">According to the World Health Organization, road traffic injuries caused an estimated 1.25 million deaths worldwide in the year 2010. That is, one person is killed every 25 seconds. Only 28 countries, representing 449 million people (7% of the world’s population), have adequate laws that address all five risk factors (speed, drink–driving, helmets, seat-belts and child restraints). Over a third of road traffic deaths in low- and middle-income countries are among pedestrians and cyclists. However, less than 35% of low- and middle-income countries have policies in place to protect these road users.
+<!----------------------------------------- World Map row -------------------------------------------->
+<div class="row" id="worldmap">
+    <h2>World road accidents death number in 2013</h2>
+    <p>Source: <a href="http://apps.who.int/gho/data/node.main.A997">World Health Organization</a></p>
+    <p class="intro">According to the World Health Organization, road traffic injuries caused an estimated 1.25 million deaths worldwide in the year 2010. That is, one person is killed every 25 seconds. Only 28 countries, representing 449 million people (7% of the world’s population), have adequate laws that address all five risk factors (speed, drink–driving, helmets, seat-belts and child restraints). Over a third of road traffic deaths in low- and middle-income countries are among pedestrians and cyclists. However, less than 35% of low- and middle-income countries have policies in place to protect these road users.
 
-The average rate was 17.4 per 100,000 people. Low-income countries now have the highest annual road traffic fatality rates, at 24.1 per 100 000, while the rate in high-income countries is lowest, at 9.2 per 100000.</p>
-				<div id="vis_world">
-			</div>
-		</div>
-		
-		<!-- State Map row -->
-		<div class="row" id="usstatehmap">
-				<h2>America road accidents death rate in 2013</h2>
-                <p>Source: <a href="http://www.iihs.org/iihs/topics/t/general-statistics/fatalityfacts/state-by-state-overview/2013">Insurance Institute for Highway Safety Highway Loss Data Institute</a></p>
-                <div class="col-md-7">
-				<div id="vis_state">
-			</div>
-		</div>
-                <div class="col-md-3 col-md-offset-2">
-                <p class="intro1">There were 30,057 fatal motor vehicle crashes in the United States in 2013 in which 32,719 deaths occurred. This resulted in national motor vehicle crash death rates of 10.3 deaths per 100,000 people and 1.11 deaths per 100 million vehicle miles traveled. The fatality rate per 100,000 people ranged from a low of 3.1 in the District of Columbia to a high of 22.6 in Montana. The death rates per 100 million vehicle miles traveled ranged from 0.56 in the District of Columbia to 1.96 in Montana.</p>
-                </div>
-                
+    The average rate was 17.4 per 100,000 people. Low-income countries now have the highest annual road traffic fatality rates, at 24.1 per 100 000, while the rate in high-income countries is lowest, at 9.2 per 100000.</p>
+    <div id="vis_world">
     </div>
+</div>
+		
+<!----------------------------------------- State Map row -------------------------------------------->
+<div class="row" id="usstatehmap">
+    <h2>America road accidents death rate in 2013</h2>
+    <p>Source: <a href="http://www.iihs.org/iihs/topics/t/general-statistics/fatalityfacts/state-by-state-overview/2013">Insurance Institute for Highway Safety Highway Loss Data Institute</a></p>
+    <div class="col-md-7">
+    <div id="vis_state">
+    </div>
+    </div>
+    <div class="col-md-3 col-md-offset-2">
+    <p class="intro1">There were 30,057 fatal motor vehicle crashes in the United States in 2013 in which 32,719 deaths occurred. This resulted in national motor vehicle crash death rates of 10.3 deaths per 100,000 people and 1.11 deaths per 100 million vehicle miles traveled. The fatality rate per 100,000 people ranged from a low of 3.1 in the District of Columbia to a high of 22.6 in Montana. The death rates per 100 million vehicle miles traveled ranged from 0.56 in the District of Columbia to 1.96 in Montana.</p>
+    </div>
+
+</div>
+<!--------------------------------------- scroll chart row ------------------------------------------->
+<div id="page_header">
+    <h2> Starting Info or pic here maybe</h2>
+  </div>
+   <div id="graphic">
+    <div id="sections">
+      <section class="step">
+        <div class="title">Scroll down to look at some data.</div>
+        (You could also have no title or text in case 0 at all.)
+      </section>
+      <section class="step">
+        <!-- case 1 -->
+        <div class="title">Bar Chart</div>
+        The most common causes of car accident fatalities
+      </section>
+      <section class="step">
+        <!-- case 2 -->
+        <div class="title">Line Chart</div>
+          Something interesting to highlight, label, color.
+      </section>
+<!--
+      <section class="step">
+         case 3 
+        <div class="title">And here's Bosnia and Herzegovina</div>
+        It doesn't seem to have as much data.
+      </section>
+-->
+<!--
+      <section class="step">
+         case 4
+        <div class="title">These are Disasters</div>
+        Here are Rwanda and Haiti. One is genocide, one is a natural disaster. Guess which is which?
+      </section>
+
+    </div>
+    <div id="vis">
+    </div> -->
+    
+<!----------------------------------------- Bar chart row -------------------------------------------->
+    <div id="barchart">
+    <p>source:<a href="http://www.iihs.org/iihs/topics/t/general-statistics/fatalityfacts/state-by-state-overview/2013">Highway Loss Data Institute</a></p>
+    <div id="buttons_1">
+        <button id="AlcoholRate">Alcohol Impaired</button>
+        <button id="SpeedingRate">Speeding Related</button>
+        <button id="UnrestraintRate">Unrestraint Use</button>
+      </div>
+      </div>
+<!-----------------------------------------Line chart row -------------------------------------------->
+      <div id="linechart"></div>
+      
+<!----------------------------------------- xxxx chart row -------------------------------------------> 
+  </div>
+  
+  <div id="page_header">
+    <h2>Some more stuff here?</h2>
+</div>
+
+<div id="extra-space"></div>
+
+  </div>                                                                                     
 </div>
         
 
@@ -65,6 +126,15 @@ The average rate was 17.4 per 100,000 people. Low-income countries now have the 
 	<script src="js/main.js"></script>
 	<script src="js/worldmap.js"></script>
 	<script src="js/statemap.js"></script>
+    <script src="js/barchart.js"></script>
+    <script src="js/linechart.js"></script>
+    <script src="js/mfreeman_scroller.js"></script>
+    <script src="js/scroller_settings2.js"></script>
+<!--
+    <script src="js/linechart.js"></script>
+    <script src="js/barchart.js"></script>
+-->
+
 
 </body>
 
