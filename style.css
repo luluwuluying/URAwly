@@ -5,18 +5,19 @@
 body {
 	margin: 0;
 	padding: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family:  "TiemposTextWeb-Regular","Georgia";
 }
 
 h1{
-    font-family: 'Open Sans', sans-serif;
+    font-family:  "TiemposTextWeb-Regular","Georgia";
     text-align:center;
+    font-weight: bold;
 }
 h2{
-    font-family: 'Roboto', sans-serif;
+    font-family:  "TiemposTextWeb-Regular","Georgia";
     text-align:center;
     margin: 30px;
-    color:grey;
+    color:darkgray;
     }
 p{
     text-align: center;
@@ -32,18 +33,18 @@ p{
 }
 
 #mytooltip1 {
-    height: 60px;
+    height: 80px;
     padding: 10px;
+    
 }
 
 .tooltip_world {
-    z-index: 10;
+    z-index: 100;
     position: absolute;
     text-align: center;
-    min-width: 100px;
-    height: 40px;
+    width: 300px;
     padding: 2px;
-    font: 12px sans-serif;
+    font: 13px sans-serif;
     background: white;
     border: 1px white solid;
     border-radius: 5px;
@@ -72,7 +73,7 @@ p{
 #vis_world {
   padding: 20px;
   display: inline-block;
-  margin-left: 100px;
+  margin-left: 80px;
 }
 
 .intro{
@@ -106,18 +107,21 @@ div.tooltip_state {
     border-radius: 5px;
     pointer-events: none;
     border: #ccc 1px solid;
+    z-index: 10;
 }
 
 .tooltip_state p {
     margin: 5px;
 }
 
-/* Legend Position Style */
+/*
+ Legend Position Style 
 .legend {
     position:absolute;
     left:800px;
     top:350px;
 }
+*/
 .intro1{
    margin-bottom: 30px;
    color: darkgray; 
@@ -150,8 +154,13 @@ div.tooltip_state {
   color: #767678;
 }
 
+#laststep {
+    margin-bottom: 80px;
+    height: 250px !important;
+}
+
 #sections .title {
-  font-family: Arial,Helvetica,"san-serif";
+  font-family:  "TiemposTextWeb-Regular","Georgia";
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 2px;
@@ -163,12 +172,13 @@ div.tooltip_state {
   height: 300px;
 }
 
-#vis {
+
+#vis_state {
   display: none;
-  position: fixed;
-  top: 60px;
+  position: fixed !important;
+  top: 50px;
   z-index: 1;
-  margin-left: 0;
+  margin-left: 240px;
   font-size: 10px;
 }
 
@@ -177,16 +187,16 @@ div.tooltip_state {
   position: fixed;
   top: 60px;
   z-index: 1;
-  margin-left: 450px;
+  margin-left: 500px;
   font-size: 10px;
 }
 
-#linechart {
+#scatterchart{
   display: none;
   position: fixed;
   top: 60px;
   z-index: 1;
-  margin-left: 350px;
+  margin-left: 450px;
   font-size: 10px;
 }
 
@@ -211,13 +221,14 @@ button {
         height: 30px;
         border-radius: 8px;
         color:aliceblue;
+        background-color: #ead3b9;
     }
 .labels {
-        fill: white;
-        font-size: 10px;
+        fill: black;
+        font-size: 12px;
     }
 .selected {
-      background-color: #a8c4f3;
+      background-color: #80b1d3;
       border: 1px solid white;
       outline: 0 !important;
     }
@@ -232,13 +243,13 @@ background-color: white;
 .axis path,
 .axis line {
 fill: none;
-stroke: gray;
+stroke:grey;
 stroke-width: 1px;
 }
 
 .line {
 fill: none;
-stroke: #ebb1b1;
+stroke: #b9d4e7;
 stroke-width: 1px;
 stroke-opacity: 80%;
 }
@@ -258,11 +269,12 @@ opacity: 1;
 .axis text {
 font-family: sans-serif;
 font-size: 11px;
+fill:grey;
 }
 
 .tooltip_line {
 position: absolute;
-z-index: 10; 
+z-index: 100; 
 width: 300px;
 }
 
@@ -270,21 +282,70 @@ width: 300px;
 background-color:white;
 border: none;
 padding: 2px;
-border-radius: 5px; 
+border-radius: 10px; 
 border: 1px lightgrey solid;
 }
 
 .grouptext{
-stroke: lightgrey;
+fill: #80b1d3;;
 font-family: sans-serif;
 font-size: 11px;
 }
 circle {
-fill: #db7474;
-stroke:#db7474;
-stroke-width:3px;
+fill: #80b1d3;
 }
 /*===============================================================
-    chart
+ scatter   chart
 ===============================================================*/
+.circles {
+fill: #80b1d3;
+opacity: 1;
+}
+
+.dotlabels {
+font-size: 10px;
+color: steelblue;
+}
+
+.axis path,
+.axis line {
+fill: none;
+stroke: gray;
+shape-rendering: crispEdges;
+}
+
+.axis text {
+font-family: sans-serif;
+font-size: 11px;
+}
+
+.xlabel{
+font-size: 11px;
+fill: gray;
+    
+}
+.ylabel{
+font-size: 11px;
+fill: gray;
+}
+
+#menu {
+padding-left: 350px;
+font-weight: bolder;
+}
+
+.tooltip_scatter {
+position: absolute;
+z-index: 100; 
+width: 300px;
+}
+
+.tooltip_scatter p {
+background-color:white;
+border: none;
+padding: 2px;
+border-radius: 10px; 
+border: 1px lightgrey solid;
+}
+
 

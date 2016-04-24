@@ -1,5 +1,6 @@
-function drawLinechart(alcohol){
-console.log(alcohol);    
+function drawLinechart(state1){
+    
+console.log(state1);    
 //Dimensions and padding
 
 var fullwidth = 900;
@@ -49,7 +50,7 @@ var line = d3.svg.line()
 
 
 // add a tooltip to the page - not to the svg itself!
-var tooltip_line = d3.select("#mytooltip2")
+var tooltip_line = d3.select("body")
             .append("div")
             .attr("class", "tooltip_line");
 
@@ -63,18 +64,18 @@ var svg = d3.select("#linechart")
 
 
 
-var years = d3.keys(alcohol[0]).slice(0, 5); //
+var years = d3.keys(state1[0]).slice(0, 6); //
 
 var dataset = [];
 
-alcohol.forEach(function (d, i) {
+state1.forEach(function (d, i) {
 
-var alcoholrate = [];
+var deathrate = [];
 
 years.forEach(function (y) {
 
             if (d[y]) {
-            alcoholrate.push({
+            deathrate.push({
             state: d.statename,
             year: y,
             amount: d[y] 
@@ -85,7 +86,7 @@ years.forEach(function (y) {
 
             dataset.push( {
             state: d.statename,
-            Alcohol: alcoholrate  
+            death: deathrate  
             } );
 
 console.log(d.statename);
@@ -100,7 +101,7 @@ console.log(dataset);
 
             yScale.domain([
             d3.max(dataset, function(d) {
-            return d3.max(d.Alcohol, function(d) {
+            return d3.max(d.death, function(d) {
             return +d.amount;
             });
             }),
@@ -116,7 +117,7 @@ var groups = svg.selectAll("g.lines")
 
 groups.selectAll("path")
             .data(function(d) { 
-            return [ d.Alcohol ]; 
+            return [ d.death ]; 
             })
             .enter()
             .append("path")
@@ -150,11 +151,11 @@ groups.selectAll("path")
             .attr("transform", "rotate(-90)")
             .style("text-anchor", "middle")
             .attr("dy", "-60")
-            .text("Alcohol impaired driving death rate");
+            .text("Deaths per 100,000 population");
 
 var circles = groups.selectAll("circle")
             .data(function(d) { 
-            return d.Alcohol; 
+            return d.death; 
             })
             .enter()
             .append("circle");
@@ -173,17 +174,17 @@ var circles = groups.selectAll("circle")
 
         groups.append("text")
             .attr("class","grouptext")
-            .datum(function(d) { return {name: d.state, value: d.Alcohol[d.Alcohol.length - 1]}; })
+            .datum(function(d) { return {name: d.state, value: d.death[d.death.length - 1]}; })
             .attr("transform", function(d) { 
             return "translate(" + xScale(dateFormat.parse(d.value.year)) + "," + yScale(+d.value.amount) + ")"; 
             })
             .attr("x", 3)
             .attr("dy", ".35em")
             .text(function(d) {
-            if (d.value && +d.value.amount > 42) {
+            if (d.value && +d.value.amount > 21) {
             return d.name;
             }
-            if (d.value && +d.value.amount < 20) {
+            if (d.value && +d.value.amount < 3.2) {
             return d.name;
             }
 
@@ -211,8 +212,8 @@ function mouse1Func(d){
 
             tooltip_line
             .style("display", null)
-            .html("<p>state: <span style='color:#c08f8f'>" + d.state +
-            "</span>" + "<br>Year: <span style='color:#c08f8f'>" + d.year +"</span>" + "<br>Alcohol impaired driving death rate:<span style='color:#c08f8f'> " + d.amount + "%"+"</span>" + "</p>"); 
+            .html("<p>State: <span style='color:#c08f8f'>" + d.state +
+            "</span>" + "<br>Year: <span style='color:#c08f8f'>" + d.year +"</span>" + "<br>Deaths per 100,000 population:<span style='color:#c08f8f'> " + d.amount + "%"+"</span>" + "</p>"); 
             }
   
 function mouse2Func(d) {

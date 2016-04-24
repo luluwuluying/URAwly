@@ -14,19 +14,20 @@
 <body>
     <div id="mytooltip1" class="tooltip_world">
         <p class="name"></p>
-        <div data-metric="Amount" class="line"></div>
         <div class="Amount symbol"></div>
         <div class="Amount val"></div>
     </div>
     
     <div id="mytooltip2" class="tooltip_line"></div>
     
+    <div id="mytooltip3" class="tooltip_scatter"></div>
+    
 	<div class="container">
-<!--		<h1>Road accidents and deaths</h1>-->
+    <h1>Why so many road accidents fatal happened in USA?</h1>
 		
 <!----------------------------------------- World Map row -------------------------------------------->
 <div class="row" id="worldmap">
-    <h2>World road accidents death number in 2013</h2>
+    <h2>Look at the data from world : How is the death rate in whole world</h2>
     <p>Source: <a href="http://apps.who.int/gho/data/node.main.A997">World Health Organization</a></p>
     <p class="intro">According to the World Health Organization, road traffic injuries caused an estimated 1.25 million deaths worldwide in the year 2010. That is, one person is killed every 25 seconds. Only 28 countries, representing 449 million people (7% of the world’s population), have adequate laws that address all five risk factors (speed, drink–driving, helmets, seat-belts and child restraints). Over a third of road traffic deaths in low- and middle-income countries are among pedestrians and cyclists. However, less than 35% of low- and middle-income countries have policies in place to protect these road users.
 
@@ -35,71 +36,101 @@
     </div>
 </div>
 		
-<!----------------------------------------- State Map row -------------------------------------------->
-<div class="row" id="usstatehmap">
-    <h2>America road accidents death rate in 2013</h2>
-    <p>Source: <a href="http://www.iihs.org/iihs/topics/t/general-statistics/fatalityfacts/state-by-state-overview/2013">Insurance Institute for Highway Safety Highway Loss Data Institute</a></p>
-    <div class="col-md-7">
-    <div id="vis_state">
+<!----------------------------------------- State line row ------------------------------------------>
+<div class="row" id="statelinechart">
+  <h2>How about the death rate in every state</h2>
+  <p> Source:<a href="http://www.iihs.org/iihs/topics/t/general-statistics/fatalityfacts/state-by-state-overview/2013">Highway Loss Data Institute</a></p>
+   <div class="col-md-9">
+   <div id="linechart"></div>
     </div>
-    </div>
-    <div class="col-md-3 col-md-offset-2">
+ 
+   <div class="col-md-3">
     <p class="intro1">There were 30,057 fatal motor vehicle crashes in the United States in 2013 in which 32,719 deaths occurred. This resulted in national motor vehicle crash death rates of 10.3 deaths per 100,000 people and 1.11 deaths per 100 million vehicle miles traveled. The fatality rate per 100,000 people ranged from a low of 3.1 in the District of Columbia to a high of 22.6 in Montana. The death rates per 100 million vehicle miles traveled ranged from 0.56 in the District of Columbia to 1.96 in Montana.</p>
     </div>
+ </div> 
 
-</div>
+
 <!--------------------------------------- scroll chart row ------------------------------------------->
 <div id="page_header">
     <h2> Starting Info or pic here maybe</h2>
   </div>
    <div id="graphic">
     <div id="sections">
-      <section class="step">
+      <section class="step"> <!--0-->
         <div class="title">Scroll down to look at some data.</div>
         (You could also have no title or text in case 0 at all.)
       </section>
       <section class="step">
         <!-- case 1 -->
-        <div class="title">Bar Chart</div>
-        The most common causes of car accident fatalities
+        <div class="title">Here's a colored statemap</div>
       </section>
       <section class="step">
         <!-- case 2 -->
-        <div class="title">Line Chart</div>
+        <div class="title">Here's incorrect right of way.</div>
           Something interesting to highlight, label, color.
       </section>
-<!--
       <section class="step">
-         case 3 
-        <div class="title">And here's Bosnia and Herzegovina</div>
+       <!-- case 3 -->
+        <div class="title">statemap3</div>
         It doesn't seem to have as much data.
       </section>
--->
-<!--
       <section class="step">
-         case 4
-        <div class="title">These are Disasters</div>
-        Here are Rwanda and Haiti. One is genocide, one is a natural disaster. Guess which is which?
+       <!-- case 4 -->
+        <div class="title">statemap4</div>
+        It doesn't seem to have as much data.
       </section>
-
+      <section class="step">
+         <!-- case 5 -->
+        <div class="title">barchart</div>
+        Lives saved by restraints,shows the estimated total number of lives saved in 2014 for all 50 States, the District of Columbia. The far left column is the lives saved by child restraints, and the next three columns refer to lives saved by seat belts, lives saved by frontal air bags, and lives saved by motorcycle helmets, respectively. The numbers in the two far right columns represent the additional lives savable with 100 percent seat belt use and 100-percent helmet use,respectively. Due to rounding, the sum of the State totals may not equal the national total
+        </section>
+      <section class="step">
+       <!-- case 6 -->
+        <div class="title">scatter</div>
+        It doesn't seem to have as much data.
+      </section>
+         
+        <section class="step" id="laststep">
+<!--          case 7 - shut down graphs -->
+        </section>  
+        
     </div>
-    <div id="vis">
-    </div> -->
-    
-<!----------------------------------------- Bar chart row -------------------------------------------->
-    <div id="barchart">
+<!-----------------------------------------state map row ------------------------------------------->
+ 
+<div class="row" id="usstatehmap">
+    <div id="vis_state">
+        <p>Source: <a href="www.census.gov/popest/data/state/totals/2013/">NHTSA Fatal Accident Reporting System</a></p>
+    </div>
+</div>
+       
+<!----------------------------------------- bar chart row -------------------------------------------->
+  
+<div id="barchart">
     <p>source:<a href="http://www.iihs.org/iihs/topics/t/general-statistics/fatalityfacts/state-by-state-overview/2013">Highway Loss Data Institute</a></p>
     <div id="buttons_1">
         <button id="AlcoholRate">Alcohol Impaired</button>
         <button id="SpeedingRate">Speeding Related</button>
-        <button id="UnrestraintRate">Unrestraint Use</button>
+        <button id="UnrestraintRate">Didn't use seat belt</button>
       </div>
-      </div>
-<!-----------------------------------------Line chart row -------------------------------------------->
-      <div id="linechart"></div>
+</div>  
       
-<!----------------------------------------- xxxx chart row -------------------------------------------> 
+ 
+
+<!-------------------------------------- scatter chart row -------------------------------------------> 
+
+  <div id="scatterchart">
+      <p>source:<a href="http://www.iihs.org/iihs/topics/t/older-drivers/fatalityfacts/older-people">Highway Loss Data Institute</a></p>
+      <div id="menu">
+        <select>
+        <option value="all">Deaths per 100,000 people by motor vehicle crash</option>
+        <option value="woman">Woman deaths per 100,000 people by motor vehicle crash</option>
+        <option value="man">Man deaths per 100,000 people by motor vehicle crash</option>
+        </select>
+		</div>
   </div>
+<!-------------------------------------- finish chart row ------------------------------------------->
+</div>  
+  
   
   <div id="page_header">
     <h2>Some more stuff here?</h2>
@@ -107,11 +138,9 @@
 
 <div id="extra-space"></div>
 
-  </div>                                                                                     
-</div>
+                                                                            
         
-
-		 <!-- End of container -->
+<!-- End of container -->
 <!-- ====================================================  -->
 <!-- Script files -->
 <!-- ====================================================  -->
@@ -123,17 +152,16 @@
 	<script src="//d3js.org/topojson.v1.min.js"></script>
 	<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
 <!-- Main Javascript file -->
-	<script src="js/main.js"></script>
-	<script src="js/worldmap.js"></script>
-	<script src="js/statemap.js"></script>
-    <script src="js/barchart.js"></script>
-    <script src="js/linechart.js"></script>
     <script src="js/mfreeman_scroller.js"></script>
-    <script src="js/scroller_settings2.js"></script>
-<!--
-    <script src="js/linechart.js"></script>
+	<script src="js/worldmap.js"></script>
     <script src="js/barchart.js"></script>
--->
+    <script src="js/linechart.js"></script>
+    <script src="js/statemap.js"></script>
+    <script src="js/scatterchart.js"></script>
+    <script src="js/scroller_settings2.js"></script>
+    <script src="js/main.js"></script>
+    
+    
 
 
 </body>

@@ -1,5 +1,5 @@
-function drawBarchart(reason){
-    console.log(reason);
+function drawBarchart(live){
+    console.log(live);
     
     var fullwidth = 400;
     var fullheight = 500;
@@ -9,7 +9,7 @@ function drawBarchart(reason){
     var height = fullheight - margin.top - margin.bottom;
     var width = fullwidth - margin.left - margin.right;
 
-    var format = d3.format("s");
+    var format = d3.format("");
 
     //setup the svg
 
@@ -25,7 +25,7 @@ function drawBarchart(reason){
     // load the data and do stuff
     
         var selected = "AlcoholRate"; 
-        var dataset = drawGraph(reason,selected);
+        var dataset = drawGraph(live,selected);
         redraw(dataset, selected);
         
         d3.select("button#AlcoholRate").classed("selected,true");
@@ -33,7 +33,7 @@ function drawBarchart(reason){
         d3.select("#AlcoholRate")
               .on("click", function(d,i) {
                   selected = "AlcoholRate"
-                  dataset = drawGraph(reason, selected);
+                  dataset = drawGraph(live, selected);
                   redraw(dataset, selected);
                   var thisButton = d3.select(this);
                   d3.selectAll("#buttons_1 button").classed("selected", false);
@@ -43,7 +43,7 @@ function drawBarchart(reason){
           d3.select("#SpeedingRate")
               .on("click", function(d,i) {
                   selected = "SpeedingRate"
-                  dataset = drawGraph(reason, selected);
+                  dataset = drawGraph(live, selected);
                   redraw(dataset, selected);
                   var thisButton = d3.select(this);
                   d3.selectAll("#buttons_1 button").classed("selected", false);
@@ -53,7 +53,7 @@ function drawBarchart(reason){
         d3.select("#UnrestraintRate")
               .on("click", function(d,i) {
                   selected = "UnrestraintRate"
-                  dataset = drawGraph(reason, selected);
+                  dataset = drawGraph(live, selected);
                   redraw(dataset, selected);
                   var thisButton = d3.select(this);
                   d3.selectAll("#buttons_1 button").classed("selected", false);
@@ -84,13 +84,13 @@ function redraw(data, column) {
             .data(data, function (d){ return d.state;})
        
         bars
-            .attr("fill", "#a8c4f3");
+            .attr("fill", "#80b1d3");
 
         
         bars.enter()
             .append("rect")
             .attr("class", "bar")
-            .attr("fill", "#a8c4f3");
+            .attr("fill", "#80b1d3");
 
         bars.exit()
             .transition()
@@ -106,7 +106,7 @@ function redraw(data, column) {
                 return xScale(+d[column]); 
             })
             .attr("height", yScale.rangeBand())
-            .attr("fill", "#a8c4f3")
+            .attr("fill", "#80b1d3")
             .attr("transform", function(d,i) {
                 return "translate(0," + yScale(i) + ")";
             });
@@ -125,14 +125,14 @@ function redraw(data, column) {
         labels.transition()
             .duration(300)
             .text(function(d) {
-                return d.state +" " + format(d[column])+"%";
+                return d.state +" " + format(d[column]);
             })
             .attr("transform", function(d,i) {
                     return "translate(" + xScale(+d[column]) + "," + yScale(i) + ")"
             })
             .attr("dy", "1.2em")
-            .attr("dx", "-3px")
-            .attr("text-anchor", "end");
+            .attr("dx", "20px")
+            .attr("text-anchor", "begin");
 
         } 
 }

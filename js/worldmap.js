@@ -1,5 +1,5 @@
 function drawWorldmap(world,accidents){
-
+ console.log(accidents);
     var width = 1000,
     height = 550;
     center = [width / 2, height / 2],
@@ -173,15 +173,20 @@ function drawWorldmap(world,accidents){
           tooltip_world.selectAll(".symbol").style("opacity", "0");
           tooltip_world.selectAll(".val").style("font-weight", "normal");
           tooltip_world.selectAll(".val").style("color", "grey");
-          tooltip_world.select(".symbol." + "Amount").style("opacity", "1");
+          tooltip_world.select(".symbol." + "Amount").style("opacity", "1").style({
+              "color": "#6d819c"
+          });
           tooltip_world.select(".val." + "Amount").style({
               "color": "#6d819c"
           });
 
           if (countryById.get(d.properties.name) && countryById.get(d.properties.name)["Amount"]) {
-             tooltip_world.select(".name").text(countryById.get(d.properties.name)['Country']);
-             tooltip_world.select(".Amount.val").text("Death rate per 100000 population: "+countryById.get(d.properties.name)["Amount"]+"%");
-
+             tooltip_world.select(".name")
+             .html("<p>Country: <span style='color:#c08f8f'>" + countryById.get(d.properties.name)['Country'] +
+            "</span>" + "</p>"); 
+             tooltip_world.select(".Amount.val")
+             .html("<p>Death rate per 100000 population: <span style='color:#c08f8f'>" +countryById.get(d.properties.name)["Amount"] + "%" +
+            "</span>" + "<br>" +"</span>" + "<br>Deaths population:<span style='color:#c08f8f'> " + countryById.get(d.properties.name)["Number"]+"</span>" + "</p>");
           } else {
             tooltip_world.select(".name").text("No data for " + d.properties.name);
             tooltip_world.select(".Amount.val").text("NA");
