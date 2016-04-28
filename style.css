@@ -6,9 +6,14 @@ body {
 	margin: 0;
 	padding: 0;
     font-family:  "TiemposTextWeb-Regular","Georgia";
+    background-image: url("road.jpg");
+    background-attachment: fixed;
+    background-position: center top;
+    background-size: 1500px 760px;
 }
 
 h1{
+    margin-top: 50px;
     font-family:  "TiemposTextWeb-Regular","Georgia";
     text-align:center;
     font-weight: bold;
@@ -17,13 +22,65 @@ h2{
     font-family:  "TiemposTextWeb-Regular","Georgia";
     text-align:center;
     margin: 30px;
-    color:darkgray;
+    color:black;
+    }
+h3{
+    font-family:  "TiemposTextWeb-Regular","Georgia";
+    text-align:center;
+    margin: 30px;
+    color:black;
+    }
+h4{
+    font-family:  "TiemposTextWeb-Regular","Georgia";
+    text-align:center;
+    margin: 30px;
+    color:black;
     }
 p{
     text-align: center;
     color: #6d819c;
         }
 
+#car-images2{
+    display: block;
+    position: relative;
+    float: right;
+    clear: right;
+    z-index: 1;
+    top: 0px;
+    /*  z-index: 1;*/
+    padding-bottom: 20px;
+    width: 600px;
+    height:400px;
+    margin-right: 60px;
+}
+
+.source{
+    font-style: italic;
+    /*color: rgb(0,153,255);*/
+    text-align: center;
+    color: #8A8A8A;
+    margin-bottom: 1em;
+    font-size: 0.8em;
+}
+.container {
+/*    background-color: rgba(255, 255, 255, 0.6);*/
+    background-color: #fff;
+    margin-top: 1em;
+    padding-right: 3em;
+    padding-left: 3em;
+    max-width: 1100px;
+}
+.conclusion{
+    margin-bottom: 30px;
+   color: darkgray; 
+   text-align: inherit;
+   margin-left: 80px;
+   margin-right: 80px;
+}
+.source_footer1{
+    margin-bottom:40px;
+}
 /*===============================================================
 	world map
 ===============================================================*/
@@ -73,15 +130,15 @@ p{
 #vis_world {
   padding: 20px;
   display: inline-block;
-  margin-left: 80px;
+  margin-left: 20px;
 }
 
 .intro{
    margin-bottom: 30px;
    color: darkgray; 
    text-align: inherit;
-    margin-left: 100px;
-    margin-right: 100px;
+   margin-left: 80px;
+   margin-right: 80px;
 }
 
 
@@ -126,8 +183,8 @@ div.tooltip_state {
    margin-bottom: 30px;
    color: darkgray; 
    text-align: inherit;
-    margin-top: 80px;
-    margin-left:30px;
+   margin-top: 80px;
+   margin-left:30px;
 }
 /*===============================================================
    scroll chart
@@ -169,7 +226,7 @@ div.tooltip_state {
 }
 
 #extra-space {
-  height: 300px;
+  height: 200px;
 }
 
 
@@ -178,7 +235,7 @@ div.tooltip_state {
   position: fixed !important;
   top: 50px;
   z-index: 1;
-  margin-left: 240px;
+  margin-left: 270px;
   font-size: 10px;
 }
 
@@ -187,7 +244,7 @@ div.tooltip_state {
   position: fixed;
   top: 60px;
   z-index: 1;
-  margin-left: 500px;
+  margin-left: 400px;
   font-size: 10px;
 }
 
@@ -196,7 +253,7 @@ div.tooltip_state {
   position: fixed;
   top: 60px;
   z-index: 1;
-  margin-left: 450px;
+  margin-left: 330px;
   font-size: 10px;
 }
 
@@ -204,7 +261,7 @@ div.tooltip_state {
   position: relative;
   margin: 20px;
   z-index: 2;
-  width: 600px;
+  width: 1000px;
 }
 
 /*===============================================================

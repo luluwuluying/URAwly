@@ -1,9 +1,9 @@
 function drawStatemap(reason) {
     
     //Width and height of map
-    var width = 1000;
+    var width = 800;
     var height = 550;
-
+    
     // D3 Projection
     var projection = d3.geo.albersUsa()
                        .translate([width/2, height/2])    // translate to center of screen
@@ -66,162 +66,157 @@ function drawStatemap(reason) {
                 .style("stroke","white");
         });
 
-//    svg.select("svg").selectAll("path.states")
-//    .transition()
-//    .delay(2000)
-//    .duration(4000)
-//    .attr("transform", "translate(-814,404)rotate(9)")
     
 svg.append("circle")
 .attr("class", "legend")
 .attr("id", "properline")
-.attr("cx",790)
-.attr("cy",340)
+.attr("cx",660)
+.attr("cy",350)
 .style("fill","#a6c9e1")
 .attr("r",6);
 
     svg.append("text")
     .attr("class", "legend")
     .attr("id", "properline")
-    .attr("x",800)
-    .attr("y",346)
-    .attr("font-size","11px")
+    .attr("x",670)
+    .attr("y",356)
+    .attr("font-size","9px")
     .style("text-anchor", "left")
     .text("Failure to keep in proper line");
 
 svg.append("circle")
 .attr("class", "legend")
 .attr("id", "rightway")
-.attr("cx",790)
-.attr("cy",360)
+.attr("cx",660)
+.attr("cy",370)
 .style("fill","#b8dbd3")
 .attr("r",6)
 
     svg.append("text")
     .attr("class", "legend")
     .attr("id", "rightway")
-    .attr("x",800)
-    .attr("y",366)
-    .attr("font-size","11px")
+    .attr("x",670)
+    .attr("y",376)
+    .attr("font-size","9px")
     .style("text-anchor", "left")
     .text("Failure to yield right of way");
 
 svg.append("circle")
 .attr("class", "legend")
 .attr("id", "reckless")
-.attr("cx",790)
-.attr("cy",380)
+.attr("cx",660)
+.attr("cy",390)
 .attr("r",6)
 .style("fill","	#ffcd94")
 
     svg.append("text")
     .attr("class", "legend")
     .attr("id", "reckless")
-    .attr("x",800)
-    .attr("y",386)
-    .attr("font-size","11px")
+    .attr("x",670)
+    .attr("y",396)
+    .attr("font-size","9px")
     .style("text-anchor", "left")
     .text("Reckless or careless driving");
 
 svg.append("circle")
 .attr("class", "legend")
 .attr("id", "over")
-.attr("cx",790)
-.attr("cy",400)
+.attr("cx",660)
+.attr("cy",410)
 .attr("r",6)
 .style("fill","#c8e0a6")
 
     svg.append("text")
     .attr("class", "legend")
     .attr("id", "over")
-    .attr("x",800)
-    .attr("y",406)
-    .attr("font-size","11px")
+    .attr("x",670)
+    .attr("y",416)
+    .attr("font-size","9px")
     .style("text-anchor", "left")
     .text("Overcorrecting");
 
 svg.append("circle")
 .attr("class", "legend")
 .attr("id", "adjusting")
-.attr("cx",790)
-.attr("cy",420)
+.attr("cx",660)
+.attr("cy",430)
 .attr("r",6)
 .style("fill","	orange")
 
     svg.append("text")
     .attr("class", "legend")
     .attr("id", "adjusting")
-    .attr("x",800)
-    .attr("y",426)
-    .attr("font-size","11px")
+    .attr("x",670)
+    .attr("y",436)
+    .attr("font-size","9px")
     .style("text-anchor", "left")
     .text("Not adjusting to road surface");
 
 svg.append("circle")
 .attr("class", "legend")
 .attr("id", "wrongroad")
-.attr("cx",790)
-.attr("cy",440)
+.attr("cx",660)
+.attr("cy",450)
 .attr("r",6)
 .style("fill","	#e5c3c6")
 
     svg.append("text")
     .attr("class", "legend")
     .attr("id", "wrongroad")
-    .attr("x",800)
-    .attr("y",446)
-    .attr("font-size","11px")
+    .attr("x",670)
+    .attr("y",456)
+    .attr("font-size","9px")
     .style("text-anchor", "left")
     .text("Driving on wrong side of road");
 
 svg.append("circle")
 .attr("class", "legend")
 .attr("id", "obstruction")
-.attr("cx",790)
-.attr("cy",460)
+.attr("cx",660)
+.attr("cy",470)
 .attr("r",6)
 .style("fill","	#c69f9f")
 
     svg.append("text")
     .attr("class", "legend")
     .attr("id", "obstruction")
-    .attr("x",800)
-    .attr("y",466)
-    .attr("font-size","11px")
+    .attr("x",670)
+    .attr("y",476)
+    .attr("font-size","9px")
     .style("text-anchor", "left")
-    .text("Not adjusting to road obstruction");
+    .text("Not adjust to road obstruction");
 
 svg.append("circle")
 .attr("class", "legend")
 .attr("id", "equipment")
-.attr("cx",790)
-.attr("cy",480)
+.attr("cx",660)
+.attr("cy",490)
 .attr("r",6)
 .style("fill","#ff8b94")
 
     svg.append("text")
     .attr("class", "legend")
     .attr("id", "equipment")
-    .attr("x",800)
-    .attr("y",486)
-    .attr("font-size","11px")
+    .attr("x",670)
+    .attr("y",496)
+    .attr("font-size","9px")
     .style("text-anchor", "left")
-    .text("Operating without required equipment");
+    .text("Without required equipment");
     
 svg.append("circle")
 .attr("class", "legend")
 .attr("id", "turn")
-.attr("cx",790)
-.attr("cy",500)
+.attr("cx",660)
+.attr("cy",510)
 .attr("r",6)
 .style("fill","	#f7e7b4")
 
     svg.append("text")
     .attr("class", "legend")
     .attr("id", "turn")
-    .attr("x",800)
-    .attr("y",506)
-    .attr("font-size","11px")
+    .attr("x",670)
+    .attr("y",516)
+    .attr("font-size","9px")
     .style("text-anchor", "left")
     .text("Improper turn");
 

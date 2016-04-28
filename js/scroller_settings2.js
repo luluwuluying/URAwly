@@ -12,7 +12,7 @@ var scatterchart = d3.select("#scatterchart");
 
 var update = function(value) {
         var state = null;
-        var show_vis_map = true;
+        var show_vis_map = false;
         var show_vis_bar = false;
         var show_vis_scatter = false;
     
@@ -27,6 +27,7 @@ var update = function(value) {
         case 1:
             console.log("in case", value);
             show_vis_map = true;
+            resetToNormal();
             show_vis_bar = false;
             show_vis_scatter = false;
         break;
@@ -72,7 +73,6 @@ var update = function(value) {
           break;
                 
         default:
-          state = null;
           show_vis_map = false;
           show_vis_bar = false;
           show_vis_scatter = false;
@@ -162,4 +162,27 @@ function recklessColors() {
     d3.selectAll("svg.vis_state circle")
         .style("opacity",0);
     d3.selectAll("#reckless").style("opacity", 1);
+}
+
+function resetToNormal(){
+    d3.selectAll("svg.vis_state path.states").transition()
+    .style("fill", function (d) {
+        if(d.id==06){return "#f7e7b4"} // Improper turn
+        if(d.id==02){return "#c69f9f"} // Not adjusting to road surface
+        if(d.id==10){return "orange"}  // Not adjusting to road obstruction
+        if(d.id==42){return "#e5c3c6"} // Driving on wrong side of road
+        if(d.id==22){return "#ff8b94"} // Operating without required equipment
+        if(d.id==53 || d.id==30 || d.id==38 || d.id==55 || d.id==20 || d.id==4 ){return "#b8dbd3"} //Failure to yield right of way
+        if(d.id==08 || d.id==05 || d.id==12 || d.id==27 || d.id==37 || d.id==33 ){return "	#ffcd94"}//reckless or careless driving
+        if(d.id==46 || d.id==21 || d.id==01 ){return "	#96ead7"} //overcorrecting
+       else{
+           return "#80b1d3" 
+       }
+    });
+    d3.selectAll("svg.vis_state circle.legend")
+        .style("opacity", 1);
+    d3.selectAll("svg.vis_state text.legend")
+        .style("opacity", 1);
+    d3.selectAll("svg.vis_state circle")
+        .style("opacity",1);
 }

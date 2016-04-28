@@ -256,7 +256,7 @@ function mouse1Func(d){
 
         tooltip_scatter
         .style("display", null)
-        .html("<p> Woman traffic death rate : <span style='color:#c08f8f'>" + d.Female + "%"+
+        .html("<p>Age: <span style='color:#c08f8f'> " + d.Age + "</span>" +"<br> Woman traffic death rate : <span style='color:#c08f8f'>" + d.Female + "%"+
         "</span>" +  "<br>Man traffic death rate:<span style='color:#c08f8f'> " + d.Male + "%"+"</span>" + "</p>"); 
 }
 

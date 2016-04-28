@@ -3,7 +3,7 @@ function drawLinechart(state1){
 console.log(state1);    
 //Dimensions and padding
 
-var fullwidth = 900;
+var fullwidth = 800;
 var fullheight = 600;
 var margin = { top: 20, right: 150, bottom: 40, left: 100};
 

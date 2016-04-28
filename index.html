@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<!-- Starting Afresh: Week 14: Multiple charts. Working towards the final project  -->
+<!-- Starting : Multiple charts. Working towards the final project  -->
 
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
 
-		<!-- Link to Bootstrap stylesheet -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-		<!-- Link to custom style.css -->
-		<link href="style.css" rel="stylesheet" type="text/css" />
+<!-- Link to Bootstrap stylesheet -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<!-- Link to custom style.css -->
+<link href="style.css" rel="stylesheet" type="text/css" />
 
-	</head>
+</head>
 
 <body>
+   
     <div id="mytooltip1" class="tooltip_world">
         <p class="name"></p>
         <div class="Amount symbol"></div>
@@ -23,94 +24,122 @@
     <div id="mytooltip3" class="tooltip_scatter"></div>
     
 	<div class="container">
-    <h1>Why so many road accidents fatal happened in USA?</h1>
+        <h1>Thousands of Americans are dying in </br> terrible <font color="red">car crashes</font> every year </h1>
 		
 <!----------------------------------------- World Map row -------------------------------------------->
 <div class="row" id="worldmap">
-    <h2>Look at the data from world : How is the death rate in whole world</h2>
-    <p>Source: <a href="http://apps.who.int/gho/data/node.main.A997">World Health Organization</a></p>
-    <p class="intro">According to the World Health Organization, road traffic injuries caused an estimated 1.25 million deaths worldwide in the year 2010. That is, one person is killed every 25 seconds. Only 28 countries, representing 449 million people (7% of the world’s population), have adequate laws that address all five risk factors (speed, drink–driving, helmets, seat-belts and child restraints). Over a third of road traffic deaths in low- and middle-income countries are among pedestrians and cyclists. However, less than 35% of low- and middle-income countries have policies in place to protect these road users.
+    <h3>The car crashes fatal rate around the world</h3>
+    <p class="intro">The World Health Organization’s Global Status Report on Road Safety 2013 estimates 1.24 million traffic deaths a year – nearly triple the UN’s estimate of annual murders, and twenty times the estimated annual total of deaths in wars. Only 28 countries have adequate laws that address all five risk factors (speed, drink–driving, helmets, seat-belts and child restraints). Over a third of road traffic deaths in low- and middle-income countries are among pedestrians and cyclists. However, less than 35% of low- and middle-income countries have policies in place to protect these road users.
 
-    The average rate was 17.4 per 100,000 people. Low-income countries now have the highest annual road traffic fatality rates, at 24.1 per 100 000, while the rate in high-income countries is lowest, at 9.2 per 100000.</p>
-    <div id="vis_world">
-    </div>
+    The average rate was 17.4 per 100,000 people. Low-income countries now have the highest annual road traffic fatality rates, at 24.1 per 100 000, while the rate in high-income countries is lowest, at 9.2 per 100000.
+    
+    Compare to other countries, U.S. is relatively safe. However, there were 30,057 fatal motor vehicle crashes in the United States in 2013 in which 32,719 deaths occurred.</p>
+    <p class ="source">Source: <a href="http://apps.who.int/gho/data/node.main.A997">World Health Organization</a></p>
+    <p>Hover on the map to see the detailed data</p>
+    <div id="vis_world"></div>  
 </div>
 		
 <!----------------------------------------- State line row ------------------------------------------>
 <div class="row" id="statelinechart">
-  <h2>How about the death rate in every state</h2>
-  <p> Source:<a href="http://www.iihs.org/iihs/topics/t/general-statistics/fatalityfacts/state-by-state-overview/2013">Highway Loss Data Institute</a></p>
+  <h3>The car crashes death rate acrosss the US states from 2008 to 2013</h3>
    <div class="col-md-9">
+   <p>Hover on the line to see the detailed data</p>
    <div id="linechart"></div>
     </div>
- 
    <div class="col-md-3">
-    <p class="intro1">There were 30,057 fatal motor vehicle crashes in the United States in 2013 in which 32,719 deaths occurred. This resulted in national motor vehicle crash death rates of 10.3 deaths per 100,000 people and 1.11 deaths per 100 million vehicle miles traveled. The fatality rate per 100,000 people ranged from a low of 3.1 in the District of Columbia to a high of 22.6 in Montana. The death rates per 100 million vehicle miles traveled ranged from 0.56 in the District of Columbia to 1.96 in Montana.</p>
+    <p class="intro1">Montana is the nation’s crash-death capital; its fatal car-accident rate is more than twice as high as those of New York, Connecticut, and New Jersey, and three times as high as Massachusetts’s numbers.According to U.S. Census data, based on the number of deaths per 100 million miles traveled, Montana’s fatal car-accident rate is exactly twice as high as those of California, Colorado, and Maryland, and nearly twice as high as those of Pennsylvania, Michigan, Oregon, and Ohio.</p>
     </div>
+<p class ="source"> Source:<a href="http://www.iihs.org/iihs/topics/t/general-statistics/fatalityfacts/state-by-state-overview/2013">Highway Loss Data Institute</a></p>
  </div> 
 
 
 <!--------------------------------------- scroll chart row ------------------------------------------->
 <div id="page_header">
-    <h2> Starting Info or pic here maybe</h2>
-  </div>
-   <div id="graphic">
-    <div id="sections">
-      <section class="step"> <!--0-->
-        <div class="title">Scroll down to look at some data.</div>
-        (You could also have no title or text in case 0 at all.)
-      </section>
-      <section class="step">
-        <!-- case 1 -->
-        <div class="title">Here's a colored statemap</div>
-      </section>
-      <section class="step">
-        <!-- case 2 -->
-        <div class="title">Here's incorrect right of way.</div>
-          Something interesting to highlight, label, color.
-      </section>
-      <section class="step">
-       <!-- case 3 -->
-        <div class="title">statemap3</div>
-        It doesn't seem to have as much data.
-      </section>
-      <section class="step">
-       <!-- case 4 -->
-        <div class="title">statemap4</div>
-        It doesn't seem to have as much data.
-      </section>
-      <section class="step">
-         <!-- case 5 -->
-        <div class="title">barchart</div>
-        Lives saved by restraints,shows the estimated total number of lives saved in 2014 for all 50 States, the District of Columbia. The far left column is the lives saved by child restraints, and the next three columns refer to lives saved by seat belts, lives saved by frontal air bags, and lives saved by motorcycle helmets, respectively. The numbers in the two far right columns represent the additional lives savable with 100 percent seat belt use and 100-percent helmet use,respectively. Due to rounding, the sum of the State totals may not equal the national total
-        </section>
-      <section class="step">
-       <!-- case 6 -->
-        <div class="title">scatter</div>
-        It doesn't seem to have as much data.
-      </section>
-         
-        <section class="step" id="laststep">
-<!--          case 7 - shut down graphs -->
-        </section>  
-        
-    </div>
+    <h3> Human error causes crashes happen</h3>
+</div>
+<div id="graphic">
+    <img id="car-images2" src="traffic.jpg" alt="Road car" />
+    
+<div id="sections">
+   
+    <section class="step"> 
+    <!--overall paragragh-->
+    <div class="title"></div>
+    NHTSA believes “human error is the critical reason for 93 percent of crashes.” A Missouri review of the state’s 716 fatal crashes in 2011 found equipment or road failures responsible for 11, while the other 705 involved human error – typically some combination of speeding, drinking, bad lane changes, and so on.
+    <p class ="source">Source: <a href="http://barteverett.zenfolio.com/img/s3/v23/p909838386-3.jpg">Images</a> from Bing picture</p>
+    </section>
+    
+    <section class="step">
+    <!-- statemap 1 -->
+    <div class="title" style="border-bottom:1px solid black">Bad driving behavior causes fatal crashes</div>
+    The map above demonstrates the leading cause within each state. We took the total number of crashes associated with each of these causes by state and divided that number by each state’s population to arrive at a per-capita metric for accurate comparison.
+    
+    <p class ="source">Source: <a href="www.census.gov/popest/data/state/totals/2013/">NHTSA Fatal Accident Reporting System</a><span> / </span> <a href="http://www.autoinsurancecenter.com/deadly-bad-drivers.htm">Auto Insurance Center</a></p>
+    </section>
+    
+    <section class="step">
+    <!-- statemap 2 -->
+    <div class="title" style="border-bottom:1px solid black">Which causes the most fatal crashes?</div>
+    The data from Auto Insurance center indicates that the driver behavior caused the highest number of fatal crashes in each state. The critical reason is failure to stay in proper lane. 
+    </section>
+    
+    <section class="step">
+    <!-- statemap 3 -->
+    <div class="title" style="border-bottom:1px solid black">statemap3</div>
+     
+    </section>
+    
+    <section class="step">
+    <!-- statemap 4 -->
+    <div class="title" style="border-bottom:1px solid black">statemap4</div>
+    Arkansas is home to the most deadly reckless drivers, but Indiana saw the most-deaths-per-capita results from road rage. Wyoming suffers most from drivers drifting out of their assigned lane unintentionally; Delaware was No. 1 for deaths resulting from changing lanes unsafely. The common thread for these category leaders? Large, relatively rural territories where thinly distributed law enforcement struggles to encourage safe driving. 
+    </section>
+    
+    <section class="step">
+    <!-- bar chart -->
+    <div class="title" style="border-bottom:1px solid black">Three critical reason causes the fatal crashes</div>
+    1.Every year, many people are killed as a result of drunk drivers.In 2013, the CDC reported that 31% of all traffic fatalities in the US, or 10,076 deaths, were the result of drunk drivers. 200 of those people were children under the age of 14.
+    </br>
+   2.Speeding is appealing to drivers moving along the highways of New Hampshire and Wyoming, where the road can stretch straight ahead for miles, unobstructed by traffic. 
+    </br>
+    3.
+    
+    <p class ="source">source:<a href="http://www.iihs.org/iihs/topics/t/general-statistics/fatalityfacts/state-by-state-overview/2013">Highway Loss Data Institute</a></p>
+    </section>
+    
+    <section class="step">
+    <!-- scatter chart -->
+    <div class="title" style="border-bottom:1px solid black">Which age group are died the most fatal crashes</div>
+     show the distribution of mean population
+and crash fatalities from 1996 to 2006 by age group
+for females and males, respectively
+    Males aged 18 to 20 are nearly seven times more likely to drink and drive than are females aged 18 to 20.
+    Motor vehicle crash fatalities were higher for males
+than females in all age groups, 
+   Among females, the over-65 age group had the highest
+number of fatalities followed by the 16-to-20 age
+group.
+    <p class ="source">source:<a href="http://www.iihs.org/iihs/topics/t/older-drivers/fatalityfacts/older-people">Highway Loss Data Institute</a></p>
+    </section>
+
+    <section class="step" id="laststep">
+    <!-- shut down graphs -->
+    </section>  
+</div>
 <!-----------------------------------------state map row ------------------------------------------->
  
 <div class="row" id="usstatehmap">
-    <div id="vis_state">
-        <p>Source: <a href="www.census.gov/popest/data/state/totals/2013/">NHTSA Fatal Accident Reporting System</a></p>
-    </div>
+    <div id="vis_state"></div>
 </div>
        
 <!----------------------------------------- bar chart row -------------------------------------------->
   
 <div id="barchart">
-    <p>source:<a href="http://www.iihs.org/iihs/topics/t/general-statistics/fatalityfacts/state-by-state-overview/2013">Highway Loss Data Institute</a></p>
+   <p>Click on the button below to see the different crashes death rate by different impaired</p>
     <div id="buttons_1">
         <button id="AlcoholRate">Alcohol Impaired</button>
         <button id="SpeedingRate">Speeding Related</button>
-        <button id="UnrestraintRate">Didn't use seat belt</button>
+        <button id="UnrestraintRate">Without Seatbelt</button>
       </div>
 </div>  
       
@@ -119,7 +148,7 @@
 <!-------------------------------------- scatter chart row -------------------------------------------> 
 
   <div id="scatterchart">
-      <p>source:<a href="http://www.iihs.org/iihs/topics/t/older-drivers/fatalityfacts/older-people">Highway Loss Data Institute</a></p>
+     <p>Click the buttons to see the comparison of Crash Fatalities by Sex and Age Group</p>
       <div id="menu">
         <select>
         <option value="all">Deaths per 100,000 people by motor vehicle crash</option>
@@ -128,17 +157,33 @@
         </select>
 		</div>
   </div>
+  
 <!-------------------------------------- finish chart row ------------------------------------------->
 </div>  
   
   
   <div id="page_header">
-    <h2>Some more stuff here?</h2>
-</div>
+    <h2>What should we do in the future to prevent car crashes death?</h2>
+    <p class ="conclusion">In 2014 the use of seat belts in passenger vehicles saved an
+estimated 12,802 lives (occupants 5 and older), and an estimated
+2,396 lives (occupants 13 and older) were saved by
+frontal air bags. An estimated 252 child occupants 4 and
+younger were saved by the use of child restraints, and 1,669
+lives were saved by the use of motorcycle helmets. An additional
+2,814 lives would have been saved in 2014 if all unrestrained
+passenger vehicle occupants 5 and older involved
+in fatal crashes had worn their seat belts. If all motorcyclists
+had been helmeted, then an additional 660 lives would have
+been saved. An estimated 485 lives were saved due to minimum-drinking-age
+laws.</p>
+  </div>
 
-<div id="extra-space"></div>
-
-                                                                            
+  <div id="extra-space"></div>
+<div style="border-bottom:1px solid black"></div>
+  <h4>Visualization Created by Luying Wu, <a href="http://www.luyingwu.com" >www.luyingwu.com</a></h4>
+	<p class="source_footer">Background Image, Photograph by Luying Wu</p>
+	<p class="source_footer1">Data Source :<a href="http://www.iihs.org/iihs/topics/t/general-statistics/fatalityfacts/state-by-state-overview/2013">Highway Loss Data Institute</a><span> / </span> <a href="http://apps.who.int/gho/data/node.main.A997">World Health Organization</a><span> / </span> <a href="www.census.gov/popest/data/state/totals/2013/">NHTSA Fatal Accident Reporting System</a><span> / </span> <a href="http://www.autoinsurancecenter.com/deadly-bad-drivers.htm">Auto Insurance Center</a></p>
+</div>                                                                           
         
 <!-- End of container -->
 <!-- ====================================================  -->
