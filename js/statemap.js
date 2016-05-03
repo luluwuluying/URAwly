@@ -57,6 +57,16 @@ function drawStatemap(reason) {
         tooltip.html("<p>" + d.properties.name + "</p>")
                .style("left", (d3.event.pageX + 10) + "px")
                .style("top", (d3.event.pageY - 28) + "px");
+        var scroll = $(window).scrollTop();
+        $(window).scroll(function (event) {
+            var newscroll = $(window).scrollTop();
+            var diff = newscroll - scroll;
+            if (diff !== 0) {
+                tooltip
+               .style("left", (d3.event.pageX + 10 + diff) + "px")
+               .style("top", (d3.event.pageY - 28 + diff) + "px");
+            }
+        });
     })
     .on("mouseout", function(d) {
             tooltip.transition()

@@ -213,13 +213,13 @@ function render(mydata) {
         labels
         .enter()
         .append("text")
-        .attr("dx", 5)
+        .attr("dx", 9)
         .attr("dy", function(d) {
         // adding some space for the overlapping ones
         if (d.Age == "Age group 30-34") {
         return 10;
         } else {
-        return -4;
+        return 2;
         }
         })
         .attr("class", "dotlabels")

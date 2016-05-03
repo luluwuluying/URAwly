@@ -55,6 +55,10 @@ p{
     margin-right: 60px;
 }
 
+.faded {
+    opacity: .2;
+}
+
 .source{
     font-style: italic;
     /*color: rgb(0,153,255);*/
@@ -184,7 +188,7 @@ div.tooltip_state {
    color: darkgray; 
    text-align: inherit;
    margin-top: 80px;
-   margin-left:30px;
+   margin-left:10px;
 }
 /*===============================================================
    scroll chart
@@ -244,7 +248,7 @@ div.tooltip_state {
   position: fixed;
   top: 60px;
   z-index: 1;
-  margin-left: 400px;
+  margin-left: 350px;
   font-size: 10px;
 }
 

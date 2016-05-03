@@ -24,12 +24,23 @@ function drawBarchart(live){
     
     // load the data and do stuff
     
-        var selected = "AlcoholRate"; 
+        var selected = "Total"; 
         var dataset = drawGraph(live,selected);
         redraw(dataset, selected);
         
-        d3.select("button#AlcoholRate").classed("selected,true");
-        
+        d3.select("button#Total").classed("selected,true");
+    
+        d3.select("#Total")
+                  .on("click", function(d,i) {
+                      selected = "Total"
+                      dataset = drawGraph(live, selected);
+                      redraw(dataset, selected);
+                      var thisButton = d3.select(this);
+                      d3.selectAll("#buttons_1 button").classed("selected", false);
+                      thisButton.classed("selected", true);
+
+                  });
+    
         d3.select("#AlcoholRate")
               .on("click", function(d,i) {
                   selected = "AlcoholRate"
@@ -40,6 +51,7 @@ function drawBarchart(live){
                   thisButton.classed("selected", true);
 
               });
+         
           d3.select("#SpeedingRate")
               .on("click", function(d,i) {
                   selected = "SpeedingRate"

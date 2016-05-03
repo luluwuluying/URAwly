@@ -82,8 +82,10 @@ var update = function(value) {
     
         if (show_vis_map) {
         mapchart.style("display", "inline-block");
+        d3.select("img#car-images2").classed("faded", true);
         } else {
         mapchart.style("display", "none");
+        d3.select("img#car-images2").classed("faded", false);
         }
         if (show_vis_bar) {
         barchart.style("display", "inline-block");
