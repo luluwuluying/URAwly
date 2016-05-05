@@ -28,7 +28,7 @@ function drawBarchart(live){
         var dataset = drawGraph(live,selected);
         redraw(dataset, selected);
         
-        d3.select("button#Total").classed("selected,true");
+        d3.select("button#Total").classed("selected", true);
     
         d3.select("#Total")
                   .on("click", function(d,i) {
