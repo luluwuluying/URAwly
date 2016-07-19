@@ -77,13 +77,14 @@ p{
 }
 .conclusion{
     margin-bottom: 30px;
-   color: darkgray; 
+   color: black; 
    text-align: inherit;
    margin-left: 80px;
    margin-right: 80px;
 }
 .source_footer1{
     margin-bottom:40px;
+    
 }
 /*===============================================================
 	world map
@@ -111,6 +112,7 @@ p{
     border-radius: 5px;
     pointer-events: none;
     border: #ccc 1px solid;
+    
 }
 
 .overlay {
@@ -139,7 +141,7 @@ p{
 
 .intro{
    margin-bottom: 30px;
-   color: darkgray; 
+   color: black; 
    text-align: inherit;
    margin-left: 80px;
    margin-right: 80px;
@@ -185,10 +187,10 @@ div.tooltip_state {
 */
 .intro1{
    margin-bottom: 30px;
-   color: darkgray; 
+   color: black; 
    text-align: inherit;
    margin-top: 80px;
-   margin-left:10px;
+   
 }
 /*===============================================================
    scroll chart
@@ -212,7 +214,7 @@ div.tooltip_state {
   font-family: "TiemposTextWeb-Regular","Georgia";
   font-size: 16px;
   line-height: 23px;
-  color: #767678;
+  color: black;
 }
 
 #laststep {
